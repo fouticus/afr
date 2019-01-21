@@ -1,0 +1,44 @@
+---
+title: "Untitled"
+subtitle: "Homework "
+author: "Alex Fout"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  word_document:
+    reference_docx: styles.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+data_dir <- "~/Documents/csu/stat555/data/"
+```
+
+# R Markdown
+
+
+```{r}
+library(dplyr)
+# extract a subset of the mtcars data
+df <- mtcars %>%
+    mutate(make_model = row.names(mtcars)) %>%
+    filter(cyl == 4) %>%    
+    select(make_model, mpg, wt) %>%
+    mutate(wt = wt*1000) %>%
+    arrange(make_model) 
+```
+
+<!-- here's how to create a table -->
+<br>
+```{r}
+library(knitr)
+kable(df)
+```
+<br>
+
+# Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```

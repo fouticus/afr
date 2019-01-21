@@ -1,0 +1,37 @@
+---
+header-includes:
+   - \usepackage{bm}
+title: "STAT 680"
+subtitle: "Homework "
+author: "Alex Fout"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy.opts=list(width.cutoff=60), tidy=TRUE)
+options(width=60)
+set.seed(2983)
+data_dir <- "~/Documents/csu/stat680/data/"
+library(reticulate)
+```
+
+## Section
+
+```{r}
+x = "rx"
+```
+
+```{python}
+#print(r.myvar)
+#print(f"test:{r.myvar}")
+x = "pyx"
+print(x)
+print(r.x)
+```
+
+```{r}
+print(x)
+print(reticulate::py$x)
+```
