@@ -1,3 +1,3 @@
-# Alex Fout's R
+# Alex Fout's R Preferences
 
-Just some simple functions and settings that I've assembled for my own use of R
+I like plots and things to look a certain way. Now I can keep all these things in one place.
